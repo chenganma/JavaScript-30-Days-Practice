@@ -63,12 +63,12 @@
     const index = comments.findIndex (commnet => comment.id === 823423);
     console.log(index);
 
-    //comments.splice($index);
+    comments.splice(index,1);  //easy way to do it
 
-    const newComments = [
-      ...comments.slice(0, index),
-      ...comments.slice(index + 1)
-    ];
+    // const newComments = [
+    //   ...comments.slice(0, index),
+    //   ...comments.slice(index + 1)
+    // ];
 
   </script>
 </body>
