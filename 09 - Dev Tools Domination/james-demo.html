@@ -31,21 +31,64 @@
 
     // warning!
 
+    console.warn('OH NOOOOOO~~~');
+
     // Error :|
+
+    console.error('this is wrong');
 
     // Info
 
+    console.info('people montain people sea');
+
     // Testing
+
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'this is wrong!');
+
+
+
+
+    console.assert(1===2, 'this is wrong');
 
     // clearing
 
+    console.clear();
+
     // Viewing DOM Elements
 
+    console.log(p); //all and actual p tag
+    console.dir(p); //list details of the element
+
     // Grouping together
+    console.clear();
+    dogs.forEach(dog=>{
+      console.group(`${dog.name}`);
+
+      console.log(`this is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+
+      console.groupEnd(`${dog.name}`);
+
+    });
 
     // counting
 
+    console.count('west');
+    console.count('west test');
+    console.count('west');
+    console.count('west test');
+    console.count('west');
+
     // timing
+
+    console.time('fetching data');
+    fetch('https://api.github.com/users/webos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+        });
 
   </script>
 </body>
