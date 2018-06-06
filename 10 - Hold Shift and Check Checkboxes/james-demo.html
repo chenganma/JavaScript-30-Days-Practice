@@ -87,13 +87,17 @@
   </div>
 
 <script>
+
+  let lastChecked;
+
   function handleCheck(e){
     console.log(e);
+    lastChecked = this;
   }
   const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
   checkboxes.forEach (checkbox => checkbox.addEventListener('click',handleCheck));
   //loop over all checkbox and listen click
-  console.log(checkboxes);
+  //console.log(checkboxes);
 </script>
 </body>
 </html>
