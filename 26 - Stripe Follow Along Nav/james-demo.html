@@ -208,8 +208,11 @@
 
     this.classList.add('trigger-enter');
     setTimeout(()=>{
-      console.log(this);
-      this.classList.add('trigger-enter-active');
+
+      if(this.classList.contains('trigger-enter')){
+        this.classList.add('trigger-enter-active');
+      }
+      //console.log(this);
     }, 150);
 
     background.classList.add('open');
@@ -218,19 +221,19 @@
 
     const dropdownCoords = dropdown.getBoundingClientRect();
 
-    const navCoords = nav.getBoundingClientRect();
+    //const navCoords = navCoords.getBoundingClientRect();
 
     const coords = {
       height: dropdownCoords.height,
       width: dropdownCoords.width,
-      top: dropdownCoords.top,
-      left: dropdownCoords.left,
+      top: dropdownCoords.top - navCoords.top,
+      left: dropdownCoords.left - navCoords.left
     };
 
     background.style.setProperty('width',`${coords.width}px`);
     background.style.setProperty('height',`${coords.height}px`);
 
-    background.style.setProperty('transform',`translate(${coords.left}px, ${coords.top}px` );
+    background.style.setProperty('transform',`translate(${coords.left}px, ${coords.top}px)` );
 
     console.log(dropdownCoords);
 
