@@ -212,13 +212,35 @@
       this.classList.add('trigger-enter-active');
     }, 150);
 
-    //console.log('enter');
+    background.classList.add('open');
+
+    const dropdown = this.querySelector('.dropdown');
+
+    const dropdownCoords = dropdown.getBoundingClientRect();
+
+    const navCoords = nav.getBoundingClientRect();
+
+    const coords = {
+      height: dropdownCoords.height,
+      width: dropdownCoords.width,
+      top: dropdownCoords.top,
+      left: dropdownCoords.left,
+    };
+
+    background.style.setProperty('width',`${coords.width}px`);
+    background.style.setProperty('height',`${coords.height}px`);
+
+    background.style.setProperty('transform',`translate(${coords.left}px, ${coords.top}px` );
+
+    console.log(dropdownCoords);
 
   }
 
   function handelLeave(){
 
     this.classList.remove('trigger-enter', 'trigger-enter-active');
+
+    background.classList.remove('open');
 
     //console.log('leave');
 
