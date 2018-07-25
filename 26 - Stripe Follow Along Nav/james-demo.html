@@ -5,7 +5,6 @@
   <title>Follow Along Nav</title>
 </head>
 <body>
-  <h2>Cool</h2>
   <nav class="top">
     <div class="dropdownBackground">
       <span class="arrow"></span>
@@ -202,7 +201,7 @@
 <script>
   const triggers = document.querySelectorAll('.cool > li');
   const background = document.querySelector('.dropdownBackground');
-  const nav = document.querySelectorAll('.top');
+  const nav = document.querySelector('.top');
 
   function handelEnter(){
 
@@ -221,7 +220,7 @@
 
     const dropdownCoords = dropdown.getBoundingClientRect();
 
-    //const navCoords = navCoords.getBoundingClientRect();
+    const navCoords = nav.getBoundingClientRect();
 
     const coords = {
       height: dropdownCoords.height,
@@ -232,7 +231,6 @@
 
     background.style.setProperty('width',`${coords.width}px`);
     background.style.setProperty('height',`${coords.height}px`);
-
     background.style.setProperty('transform',`translate(${coords.left}px, ${coords.top}px)` );
 
     console.log(dropdownCoords);
